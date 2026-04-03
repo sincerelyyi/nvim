@@ -7,17 +7,21 @@ return {
         opts = {
             style = "night", -- 主题风格: "storm", "moon", "night", "day"
             transparent = true, -- 开启透明背景
+            -- 终端配色：让内置终端使用 TokyoNight 的颜色方案[reference:10]
+            terminal_colors = true,
+            -- 设置文本样式[reference:11][reference:12]
+            styles = {
+                comments = { italic = false, fg = "#006090" }, -- 注释：不使用斜体
+                keywords = { bold = true, fg = "#f070b0" }, -- 关键字：不使用斜体
+                functions = { bold = true,  fg = "#b05050" }, -- 函数名：使用粗体
+                variables = { fg = "#e0e0e0" }, -- 变量：无特殊样式}
+            },
         },
         config = function(_, opts)
             -- 这一步是必须的，用于根据上面的 opts 配置来设置主题
             require("tokyonight").setup(opts)
             -- 应用主题颜色
             vim.cmd.colorscheme("tokyonight")
-            -- 将背景颜色改为灰色
-            --vim.api.nvim_set_hl(0, "Normal", { fg = "#770777" })
-            --vim.api.nvim_set_hl(0, "LineNr", { fg = "#7a0f70" }) -- 行号背景
-            --vim.api.nvim_set_hl(0, "CursorLine", { fg = "#2c2c3a" }) -- 光标行背景
-            --vim.api.nvim_set_hl(0, "SignColumn", { fg = "none" }) -- 符号列透明
         end,
     },
 }
