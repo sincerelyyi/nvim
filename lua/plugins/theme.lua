@@ -13,7 +13,7 @@ return {
             styles = {
                 comments = { italic = false, fg = "#006090" }, -- 注释：不使用斜体
                 keywords = { bold = true, fg = "#f070b0" }, -- 关键字：不使用斜体
-                functions = { bold = true,  fg = "#b05050" }, -- 函数名：使用粗体
+                functions = { bold = true, fg = "#b05050" }, -- 函数名：使用粗体
                 variables = { fg = "#e0e0e0" }, -- 变量：无特殊样式}
             },
         },
